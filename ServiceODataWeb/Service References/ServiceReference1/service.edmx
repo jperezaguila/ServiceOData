@@ -1,0 +1,49 @@
+﻿<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="1.0" m:MaxDataServiceVersion="3.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="TallerModel" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityType Name="Clientes">
+        <Key>
+          <PropertyRef Name="id" />
+        </Key>
+        <Property Name="id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="nombre" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        <Property Name="apellidos" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        <NavigationProperty Name="Vehiculos" Relationship="TallerModel.FK_Vehiculos_Clientes" ToRole="Vehiculos" FromRole="Clientes" />
+      </EntityType>
+      <EntityType Name="Vehiculos">
+        <Key>
+          <PropertyRef Name="id" />
+          <PropertyRef Name="idcliente" />
+        </Key>
+        <Property Name="id" Type="Edm.Int32" Nullable="false" p6:StoreGeneratedPattern="Identity" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        <Property Name="marca" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        <Property Name="modelo" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        <Property Name="idcliente" Type="Edm.Int32" Nullable="false" />
+        <Property Name="motivo" Type="Edm.String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        <NavigationProperty Name="Clientes" Relationship="TallerModel.FK_Vehiculos_Clientes" ToRole="Clientes" FromRole="Vehiculos" />
+      </EntityType>
+      <Association Name="FK_Vehiculos_Clientes">
+        <End Type="TallerModel.Clientes" Role="Clientes" Multiplicity="1" />
+        <End Type="TallerModel.Vehiculos" Role="Vehiculos" Multiplicity="*" />
+        <ReferentialConstraint>
+          <Principal Role="Clientes">
+            <PropertyRef Name="id" />
+          </Principal>
+          <Dependent Role="Vehiculos">
+            <PropertyRef Name="idcliente" />
+          </Dependent>
+        </ReferentialConstraint>
+      </Association>
+    </Schema>
+    <Schema Namespace="ServiceOData.Model" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <EntityContainer Name="TallerEntities" m:IsDefaultEntityContainer="true" p6:LazyLoadingEnabled="true" xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntitySet Name="Clientes" EntityType="TallerModel.Clientes" />
+        <EntitySet Name="Vehiculos" EntityType="TallerModel.Vehiculos" />
+        <AssociationSet Name="FK_Vehiculos_Clientes" Association="TallerModel.FK_Vehiculos_Clientes">
+          <End Role="Clientes" EntitySet="Clientes" />
+          <End Role="Vehiculos" EntitySet="Vehiculos" />
+        </AssociationSet>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

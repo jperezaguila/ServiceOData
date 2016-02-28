@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceOData", "ServiceOData\ServiceOData.csproj", "{AB473FC5-8266-453D-9F1C-8EFECA6A8EA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceODataWeb", "ServiceODataWeb\ServiceODataWeb.csproj", "{64DE7ED6-1367-4F1A-9176-A617288CFDA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB473FC5-8266-453D-9F1C-8EFECA6A8EA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB473FC5-8266-453D-9F1C-8EFECA6A8EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB473FC5-8266-453D-9F1C-8EFECA6A8EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB473FC5-8266-453D-9F1C-8EFECA6A8EA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64DE7ED6-1367-4F1A-9176-A617288CFDA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64DE7ED6-1367-4F1A-9176-A617288CFDA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64DE7ED6-1367-4F1A-9176-A617288CFDA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64DE7ED6-1367-4F1A-9176-A617288CFDA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

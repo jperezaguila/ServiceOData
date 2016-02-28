@@ -1,0 +1,26 @@
+﻿@using ServiceODataWeb.ServiceReference1
+@model IList<Clientes>
+
+@{
+    ViewBag.Title = "Pagina Principal";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Vehiculos a Reparar</h3>
+        <table class="table">
+            @foreach (Clientes clientes in Model)
+            {
+                foreach (Vehiculos vehiculos in clientes.Vehiculos)
+                {
+                    <tr>
+                        <td>@clientes.id @clientes.nombre @clientes.apellidos</td>
+                        <td>@vehiculos.marca</td>
+                        
+                        <td>@vehiculos.motivo</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>
